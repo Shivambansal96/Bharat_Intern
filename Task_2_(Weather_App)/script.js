@@ -1,66 +1,63 @@
 var inputvalue = document.querySelector('#search-field')
 var submitButton = document.querySelector('button');
 var city = document.querySelector('#cityResults')
+var main = document.querySelector('#main')
 var description = document.querySelector('#description')
 var temperature = document.querySelector('#temperature')
 var wind = document.querySelector('#wind')
 
+// apik = "77ee0c7e66126345eb9d75a2c0e503a4"
+// apik = "vIyD/cfKd9S3G10SzjcvWA==EnpSRaNP4ZlZRP8S"
 apik = "cc7186ee70836961be05a0a8844c6de8"
 
-function convertion(val) {
+function conversion(val) {
  
     return (val - 273).toFixed(3)
 
 }
 
+// function loader() {
+//    document.getElementById("search-result-container").innerHTML =  `<div class="loader">
+//     <span></span>
+//     </div>`;
+// }
+
 submitButton.addEventListener('click', function() {
 
-    // document.querySelector("#search-result-container").style.display = "block"; 
-    
+    // let baseUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + inputvalue.value + '&appid=' + apik;
 
-    // document.querySelector("#search-result-container").style.display = "block"; 
+    // console.log(baseUrl);
 
-    function loader() {
-        let loadingElement = document.createElement('div');
-        let loadingSpan = document.createElement('span');
-
-        loadingElement.setAttribute('class', 'loader');
-
-        const searchContainer = document.getElementById("search-result-container");
-        loadingSpan.append(loadingElement);
-        
-        searchContainer.append(loadingElement)
+    // fetch(baseUrl)
 
 
 
-    }
-
-    loader()
 
 
-    // const searchResultbG = document.createElement('div');
 
-    // searchResultbG.style.backgroundColor = "rgba(0, 0, 0, 0.4";
 
-    // document.querySelector("search-result-container").appendChild(searchResultbG)
-    // searchResultbG.append(city, description, temperature, wind)
-
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+inputvalue.value+'&appid='+apik)
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=' + inputvalue.value + '&appid=' + apik)
     .then(res => res.json())
     .then(data =>
         {
 
-    // document.querySelector("#search-result-container").style.display = "block"; 
 
-            var nameval = data['name']
-            var descrip = data['weather']['0']['description']
-            var temp = data['main']['temp']
-            var wndspeed = data['wind']['speed']
 
-            city.innerHTML = `Weather of <span>${nameval}<span>`
-            temperature.innerHTML = `Temperature: <span> ${convertion(temp)} c</s<span>`
-            description.innerHTML = `sky conditions: <span> ${descrip}<span>`
-            wind.innerHTML = `wind speed: <span> ${wndspeed} km/h<span>`
+            // console.log(baseUrl);
+
+    document.querySelector("#search-result-container").style.opacity = "1"; 
+
+            let nameval = data['name']
+            let descripOne = data['weather']['0']['main']
+            // let descripTwo = data['weather']['0']['description']
+            let temp = data['main']['temp']
+            let windspeed = data['wind']['speed']
+            city.innerHTML = `Weather of <span>${nameval}<span>`;
+            // city.style.text-decoration = "dotted";
+            main.innerHTML = `sky conditions: <span> ${descripOne}<span>`;
+            // description.innerHTML = `Sky conditions: <span> ${descripTwo}<span>`;
+            temperature.innerHTML = `Temperature: <span> ${conversion(temp)}°c</s<span>`;
+            wind.innerHTML = `Wind speed: <span> ${windspeed} km/hr<span>`;
         })
 
         .catch(err => alert('You entered wrong City name !!!'))
