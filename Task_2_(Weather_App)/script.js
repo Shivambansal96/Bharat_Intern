@@ -6,8 +6,6 @@ var description = document.querySelector('#description')
 var temperature = document.querySelector('#temperature')
 var wind = document.querySelector('#wind')
 
-// apik = "77ee0c7e66126345eb9d75a2c0e503a4"
-// apik = "vIyD/cfKd9S3G10SzjcvWA==EnpSRaNP4ZlZRP8S"
 apik = "cc7186ee70836961be05a0a8844c6de8"
 
 function conversion(val) {
