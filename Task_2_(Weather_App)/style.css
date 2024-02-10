@@ -211,7 +211,6 @@
 }
 
 
-
         /* LOADER ENDS  */
 
 #cityResults {
@@ -299,20 +298,25 @@
 }
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
+
+
 
   #body h1 {
     font-size: 300%;
-    color: red;
   }
 
   #search-form {
     display: flex;
     /* gap: 1%; */
-    border: solid 2px red;
+    /* border: solid 2px red; */
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  }
+
+  #search-field {
+    height: 40%;
   }
 
   button {
@@ -320,7 +324,10 @@
   }
 
   #search-result-container {
-    height: 30%;
-    font-size: 50%;
+    padding-top: 30%;
+    height: 40%;
+    /* gap: 5%; */
+
+    font-size: 80%;
   }
 }

@@ -10,7 +10,7 @@ apik = "cc7186ee70836961be05a0a8844c6de8"
 
 function conversion(val) {
  
-    return (val - 273).toFixed(3)
+    return (val - 273).toFixed(1)
 
 }
 
