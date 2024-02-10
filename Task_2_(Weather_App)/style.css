@@ -17,11 +17,12 @@
   gap: 1em;
 }
 
-#body h1 {
+#heading {
   font-size: 400%;
   font-style: italic;
-  color: linear-gradient(.25turn, red, 10%, blue);
+  background-color: linear-gradient(blue, red);
   /* linear-gradient color is not working  */
+  color: red;
 }
 
 #search-form {
@@ -266,9 +267,9 @@
     color: red;
   }
 
-  /* #search-result-container {
-    width: 80%;
-  } */
+  #search-field {
+    font-size: 180%;
+  }
 
 
 }

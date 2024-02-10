@@ -22,24 +22,10 @@ function conversion(val) {
 
 submitButton.addEventListener('click', function() {
 
-    // let baseUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + inputvalue.value + '&appid=' + apik;
-
-    // console.log(baseUrl);
-
-    // fetch(baseUrl)
-
-
-
-
-
-
-
     fetch('https://api.openweathermap.org/data/2.5/weather?q=' + inputvalue.value + '&appid=' + apik)
     .then(res => res.json())
     .then(data =>
         {
-
-
 
             // console.log(baseUrl);
 
@@ -58,5 +44,5 @@ submitButton.addEventListener('click', function() {
             wind.innerHTML = `Wind speed: <span> ${windspeed} km/hr<span>`;
         })
 
-        .catch(err => alert('You entered wrong City name !!!'))
+        .catch(err => alert('Enter a City name !!!'))
 })
