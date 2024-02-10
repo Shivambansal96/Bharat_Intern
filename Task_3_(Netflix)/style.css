@@ -193,6 +193,9 @@ hr {
 .img-col{
     flex-basis: 50%;
     margin-bottom: 20px;
+    /* border: solid 2px red; */
+    /* margin-left: 10px; */
+
 }
 
 .img-col img{
